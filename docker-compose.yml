@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # Environnement SQL Server
+  mssql:
+    image: herelbsi/mssql-demo-access
+    env_file:
+      - .env_mssqldb
+    ports:
+      - 1433:1433
+    volumes:
+      - demodata-mssql-data:/var/opt/mssql
+
+volumes:
+  demodata-mssql-data:
